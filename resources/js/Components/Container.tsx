@@ -1,6 +1,17 @@
-export default function Container({ children }) {
+import { cn } from '@/lib/utils';
+
+interface ContainerProps {
+    className?: string;
+}
+
+export default function Container({ className, children }: ContainerProps) {
     return (
-        <div className="relative mx-auto h-full w-full max-w-6xl py-4">
+        <div
+            className={cn(
+                'relative mx-auto my-4 h-full max-w-5xl px-4 py-4',
+                className,
+            )}
+        >
             {children}
         </div>
     );

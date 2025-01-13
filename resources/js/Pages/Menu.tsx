@@ -1,12 +1,13 @@
 import Card from '@/Components/Card';
+import Container from '@/Components/Container';
 import ImageBanner from '@/Components/ImageBanner';
-import NarrowContainer from '@/Components/NarrowContainer';
+import KTableCell from '@/Components/KTableCell';
+import KTableHead from '@/Components/KTableHead';
 import { TableLabel } from '@/Components/TableLabel';
 import {
     Table,
     TableBody,
     TableCell,
-    TableHead,
     TableHeader,
     TableRow,
 } from '@/Components/ui/table';
@@ -35,10 +36,10 @@ export default function Menu() {
     const drinks: Drink[] = [
         {
             name: 'Americano',
-            size8: 3.25,
-            size12: 4,
-            size16: 4.25,
-            size20: 4.75,
+            size8: 3.5,
+            size12: 4.25,
+            size16: 4.3,
+            size20: 4.95,
         },
         {
             name: 'Latte',
@@ -67,143 +68,141 @@ export default function Menu() {
         },
         {
             name: 'Macchiato',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size12: 3.85,
         },
         {
             name: 'Drip Coffee',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size8: 2.25,
+            size12: 3.1,
+            size16: 3.5,
+            size20: 3.85,
         },
         {
-            name: 'Tea',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            name: 'Hot Tea',
+            size8: 3.25,
+            size12: 3.55,
+            size16: 3.85,
+            size20: 4.2,
         },
         {
-            name: 'Chai',
+            name: 'Chai Latte (vanilla or spicy)',
             size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size12: 4.75,
+            size16: 5.25,
+            size20: 5.75,
         },
         {
             name: 'Cocoa',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size8: 3.25,
+            size12: 3.95,
+            size16: 4.45,
+            size20: 4.95,
         },
         {
             name: 'Steamer',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size8: 3.25,
+            size12: 3.95,
+            size16: 4.45,
+            size20: 4.95,
         },
         {
             name: 'Cider',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size8: 2.75,
+            size12: 3.25,
+            size16: 3.75,
+            size20: 4.25,
         },
         {
             name: 'Cold Brew',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size12: 4,
+            size16: 4.75,
+            size20: 5.5,
         },
         {
             name: 'Italian Soda',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size12: 4,
+            size16: 4.75,
+            size20: 5.5,
         },
         {
-            name: 'Smoothie',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            name: 'Smoothie (ask for flavors)',
+            size12: 5.25,
+            size16: 6,
+            size20: 6.75,
         },
         {
             name: 'Orange Juice',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            size12: 3.5,
+            size16: 4,
+            size20: 4.5,
         },
         {
-            name: 'Hibiscus Lemonade',
-            size8: 4.25,
-            size12: 4.9,
-            size16: 5.1,
-            size20: 5.85,
+            name: 'Lotus/Lavender Lemonade',
+            size12: 5.25,
+            size16: 5.75,
+            size20: 6.25,
         },
     ];
 
     const foods: Food[] = [
         {
-            name: 'Our Famous Breakfast Bagel',
+            name: "Katy's Famous Breakfast Bagel",
             description:
-                'Honey ham, swiss cheese, and scrambled egg on your choice of bagel',
+                'Black Forest ham, cheddar cheese, and a scrambled egg with a thin layer of cream cheese on your choice of bagel. Try substituting ham for turkey. bacon, or tomato!',
             price: 10.6,
+        },
+        {
+            name: 'Tuna Pita',
+            description:
+                "Can't go wrong with this Katy's favorite. Albacore tuna, mayo, salt and pepper in a warm wheat pita layered with cool, crisp lettuce and freshly-sliced tomato.",
+            price: 13,
         },
         {
             name: 'Turkey Club',
             description:
-                'Roast turkey, cripsy lettuce, mayo, and succulent bacon on white, wheat, or rye bread',
+                'The classic! Lettuce, tomato, mayo, and crispy bacon stacked atop thin-sliced roasted turkey on your choice of white or wheat toast. Mustard available on request.',
+            price: 13,
+        },
+        {
+            name: 'Southwest Turkey Wrap',
+            description:
+                'Give your day some kick! Thin-sliced roasted turkey, toma-toes, lettuce, shredded cheddar, and salsa cream cheese wrapped in a jalapeno cheddar tortilla. Served cold.',
             price: 13,
         },
         {
             name: 'BLT',
             description:
-                'Succulent bacon, cripsy lettuce, fresh tomato, and mayo on toasted white, wheat, or rye.',
+                'A lunchtime favorite! Crispy bacon, cool lettuce, fresh-sliced tomato and a thin spread of mayo on your choice of white or Wheat toast',
             price: 13.25,
         },
         {
-            name: 'Tuna Pita',
+            name: 'Roasted Veggie',
             description:
-                'Premium albacore tuna, cripsy lettuce, and fresh tomato in a whole wheat pita.',
-            price: 13.25,
-        },
-        {
-            name: 'Hot Ham & Cheese',
-            description:
-                'Broiled honey ham, cheddar cheese, and mayo on your choice of bread or bagel.',
-            price: 13.25,
+                'Zucchini, onion, and red peppers lightly seasoned, tossed in olive oil and oven roasted, layered with house-made pesto, cheddar, lettuce, and tomato. Fresh veggies are roasted to order; this sandwich can take up to 20 mins to prepare.',
+            price: 13,
         },
         {
             name: 'Veggie Bagel',
             description:
-                'Cucumber, cripsy lettuce, fresh tomato, thin-sliced onion, and cream cheese on a toasted bagel of your choice.',
+                "Fast and fresh! Cucumber, lettuce, tomato, onion, hummus, and cream cheese on your choice of toasted bagel. You can also sub vegan cream cheese if that's your jam!",
             price: 9.95,
         },
         {
-            name: 'Turkey Cranb rry',
+            name: 'Turkey Cranberry',
             description:
-                'Roast turkey with cranberry sauce, crispy lettuce, and our homemade aioli, on your choice of toasted white, wheat, or rye bread.',
+                'Thin-sliced roasted turkey, with thick cranberry sauce, cool, crisp lettuce, and our incredible house-made pesto on your choice of white or wheat toast.',
             price: 12.75,
         },
         {
-            name: 'Turkey Wrap',
+            name: 'Hot Ham & Cheese',
             description:
-                'Roast turkey, cripsy lettuce, fresh tomato, and shredded havarti wrapped in a tortilla and served cold.',
-            price: 11.75,
+                'Black Forest ham broiled to perfection, with cheddar and a thin spread of mayo on white or wheat toast. Try it with fresh-sliced tomatoes, available on request!',
+            price: 13.25,
         },
         {
             name: 'Tuna Melt',
             description:
-                'Premium albacore tuna topped with cheddar cheese, toasted to melty perfection.',
+                'Tuna salad made to order, topped with gooey melted cheddar on your choice of white or wheat toast. Tomatoes and lettuce also available on request.',
             price: 13.25,
         },
     ];
@@ -214,7 +213,7 @@ export default function Menu() {
             price: 3.15,
         },
         {
-            name: 'Home-made Cookie',
+            name: 'Homemade Cookie',
             price: 2.65,
         },
         {
@@ -222,11 +221,11 @@ export default function Menu() {
             price: 6,
         },
         {
-            name: 'Fresh Garden Salad',
+            name: 'Salad',
             price: 4.75,
         },
         {
-            name: 'Kettl Chips',
+            name: 'Potato Chips',
             price: 2,
         },
         {
@@ -238,12 +237,15 @@ export default function Menu() {
     const adds = {
         price: 0.75,
         items: [
-            'Extra Shot',
+            'Extra Espresso Shot',
             'Flavor Shot',
             'Soy Milk',
             'Oat Milk',
+            'Hemp Milk',
             'Almond Milk',
             'Coconut Milk',
+            'Breve',
+            'White Coffee',
         ],
     };
 
@@ -277,46 +279,67 @@ export default function Menu() {
                 imageUrl={'/storage/fourtop-bagel-on-plate.jpg'}
                 title={'Menu'}
             ></ImageBanner>
-            <NarrowContainer>
-                <Card>
-                    <TableLabel>Drinks</TableLabel>
-                    <Table className="mx-auto mt-2 max-w-2xl">
+            <Container>
+                <Card className={'mb-8 p-2 pt-8'}>
+                    <TableLabel>Beverages</TableLabel>
+                    <Table className="mx-auto mt-2 max-w-[250px] max-w-sm sm:max-w-2xl">
                         <TableHeader>
                             <TableRow>
-                                <TableHead></TableHead>
-                                <TableHead>8 oz.</TableHead>
-                                <TableHead>12 oz.</TableHead>
-                                <TableHead>16 oz.</TableHead>
-                                <TableHead>20 oz.</TableHead>
+                                <KTableHead></KTableHead>
+                                <KTableHead>
+                                    <span className="sm:text-md whitespace-nowrap text-xs">
+                                        8 oz.
+                                    </span>
+                                </KTableHead>
+                                <KTableHead>
+                                    <span className="sm:text-md whitespace-nowrap text-xs">
+                                        12 oz.
+                                    </span>
+                                </KTableHead>
+                                <KTableHead>
+                                    <span className="sm:text-md whitespace-nowrap text-xs">
+                                        16 oz.
+                                    </span>
+                                </KTableHead>
+                                <KTableHead>
+                                    <span className="sm:text-md whitespace-nowrap text-xs">
+                                        20 oz.
+                                    </span>
+                                </KTableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {drinks.map((item: Drink) => {
                                 return (
-                                    <TableRow key={item.name}>
-                                        <TableCell className="text-base font-bold">
-                                            {item.name}
-                                        </TableCell>
-                                        <TableCell>
+                                    <TableRow
+                                        className="border-b-background"
+                                        key={item.name}
+                                    >
+                                        <KTableCell>
+                                            <span className="text-xs font-bold">
+                                                {item.name}
+                                            </span>
+                                        </KTableCell>
+                                        <KTableCell>
                                             {item.size8 &&
                                                 USDollar.format(item.size8)}
-                                        </TableCell>
-                                        <TableCell>
+                                        </KTableCell>
+                                        <KTableCell>
                                             {item.size12 &&
                                                 USDollar.format(item.size12)}
-                                        </TableCell>
-                                        <TableCell>
+                                        </KTableCell>
+                                        <KTableCell>
                                             {item.size16 &&
                                                 USDollar.format(item.size16)}
-                                        </TableCell>
-                                        <TableCell>
+                                        </KTableCell>
+                                        <KTableCell>
                                             {item.size20 &&
                                                 USDollar.format(item.size20)}
-                                        </TableCell>
+                                        </KTableCell>
                                     </TableRow>
                                 );
                             })}
-                            <TableRow>
+                            <TableRow className="border-b-background">
                                 <TableCell className="text-base font-bold">
                                     Add for {adds.price}
                                 </TableCell>
@@ -327,17 +350,20 @@ export default function Menu() {
                         </TableBody>
                     </Table>
                 </Card>
-                <Card>
+                <Card className={'mb-8 pt-8'}>
                     <TableLabel>Bottled Beverages</TableLabel>
-                    <Table className="mx-auto mt-2 max-w-2xl">
+                    <Table className="mx-auto mt-2 max-w-sm">
                         <TableBody>
                             {beverages.map((item: Other) => {
                                 return (
-                                    <TableRow key={item.name}>
+                                    <TableRow
+                                        className="border-b-background"
+                                        key={item.name}
+                                    >
                                         <TableCell className="text-base font-bold">
                                             {item.name}
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className="font-medium text-primary-foreground">
                                             {USDollar.format(item.price)}
                                         </TableCell>
                                     </TableRow>
@@ -346,21 +372,24 @@ export default function Menu() {
                         </TableBody>
                     </Table>
                 </Card>
-                <Card>
+                <Card className={'mb-8 pt-8'}>
                     <TableLabel>Sandwiches</TableLabel>
 
                     <Table className="mx-auto mt-2 max-w-2xl">
                         <TableBody>
                             {foods.map((item: Food) => {
                                 return (
-                                    <TableRow key={item.name}>
+                                    <TableRow
+                                        className="border-b-background"
+                                        key={item.name}
+                                    >
                                         <TableCell className="font-medium">
                                             <div className="text-base font-bold">
                                                 {item.name}
                                             </div>
                                             <div>{item.description}</div>
                                         </TableCell>
-                                        <TableCell>
+                                        <TableCell className="font-medium text-primary-foreground">
                                             {USDollar.format(item.price)}
                                         </TableCell>
                                     </TableRow>
@@ -369,18 +398,21 @@ export default function Menu() {
                         </TableBody>
                     </Table>
                 </Card>
-                <Card>
+                <Card className={'mb-8 pt-8'}>
                     <TableLabel>Sides &amp; Snacks</TableLabel>
-                    <div className="mx-auto mt-4 w-1/2">
-                        <Table className="mx-auto max-w-2xl">
+                    <div className="mx-auto mt-4 lg:w-1/2">
+                        <Table className="mx-auto max-w-sm">
                             <TableBody>
                                 {others.map((item: Other) => {
                                     return (
-                                        <TableRow key={item.name}>
+                                        <TableRow
+                                            className="border-b-background"
+                                            key={item.name}
+                                        >
                                             <TableCell className="text-base font-bold">
                                                 {item.name}
                                             </TableCell>
-                                            <TableCell>
+                                            <TableCell className="font-medium text-primary-foreground">
                                                 {USDollar.format(item.price)}
                                             </TableCell>
                                         </TableRow>
@@ -390,7 +422,7 @@ export default function Menu() {
                         </Table>
                     </div>
                 </Card>
-            </NarrowContainer>
+            </Container>
         </Layout>
     );
 }

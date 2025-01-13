@@ -1,6 +1,13 @@
-export default function Card({ children }) {
+import { cn } from '@/lib/utils';
+
+interface Card {
+    padding: string;
+    className: string;
+}
+
+export default function Card({ className, children }) {
     return (
-        <div className="mb-2 mt-6 rounded border-r bg-primary p-4">
+        <div className={cn('rounded bg-card p-4 text-sm', className)}>
             {children}
         </div>
     );

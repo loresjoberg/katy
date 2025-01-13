@@ -5,7 +5,9 @@ interface SmallImageProps {
 export default function SmallImage({ imageUrl }: SmallImageProps) {
     return (
         <div
-            className={'w-full min-w-8 border-black bg-cover bg-center'}
+            className={
+                'shrink-0 grow-0 basis-1/4 border-black bg-cover bg-center'
+            }
             style={{ backgroundImage: `url(\'${imageUrl}\')` }}
         ></div>
     );

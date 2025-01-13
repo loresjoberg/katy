@@ -1,73 +1,41 @@
-import Container from '@/Components/Container';
-import { Link } from '@inertiajs/react';
+import MappedNav from '@/Components/MappedNav';
 
-interface NavItem {
-    order: number;
-    label: string;
-    page: string;
-}
-export default function FixedHead() {
-    const currentRoute = route().current() === 'home' ? '' : route().current();
-    console.log('currentRoute', currentRoute);
-    const navItems: NavItem[] = [
-        {
-            order: 1,
-            label: 'Home',
-            page: '/',
-        },
-        {
-            order: 2,
-            label: 'Menu',
-            page: '/menu',
-        },
-        {
-            order: 3,
-            label: 'Hours & Location',
-            page: '/hours-and-location',
-        },
-        {
-            order: 4,
-            label: 'About',
-            page: '/about',
-        },
-        {
-            order: 5,
-            label: 'Contact',
-            page: '/contact',
-        },
-    ];
-
+function HeaderLogo() {
     return (
-        <div className="fixed z-10 h-40 w-full border-b-2 border-black bg-primary shadow-lg">
-            <Container>
-                <div className="flex h-full max-h-32 flex-row justify-between">
-                    <div className="header-logo h-full max-h-32">
-                        <img
-                            className="h-full"
-                            src="/storage/cafe-4-top-logo.png"
-                            alt="Cafe 4-Top"
-                        />
-                    </div>
-                    <div className="flex h-full w-3/4 flex-row items-center justify-between gap-8 py-4">
-                        {navItems.map((item) => {
-                            const colorCss =
-                                '/' + currentRoute === item.page
-                                    ? 'opacity-50'
-                                    : 'opacity-100';
-                            console.log('colorCss', colorCss);
-                            return (
-                                <Link
-                                    key={item.page}
-                                    className={'text-2xl font-bold ' + colorCss}
-                                    href={item.page}
-                                >
-                                    {item.label}
-                                </Link>
-                            );
-                        })}
+        <div className="mt-2 basis-full bg-[url('/storage/katys-logo-color.png')] bg-contain bg-center bg-no-repeat sm:mb-2 lg:mb-2 lg:mr-4 lg:mt-0 lg:basis-[150px] xl:basis-[200px]" />
+    );
+}
+
+export default function FixedHead() {
+    return (
+        <div className="fixed z-10 flex w-full flex-col justify-between bg-card shadow-lg">
+            <div className="flex h-16 w-full flex-row justify-between sm:h-32">
+                <div
+                    className="h-full min-w-16 bg-cover"
+                    style={{
+                        backgroundImage: "url('/storage/contour-a.png')",
+                        borderRadius: '0 0 100% 0',
+                        flexBasis: '18%',
+                    }}
+                ></div>
+                <div className="flex max-h-32 max-w-4xl flex-col justify-between align-middle sm:basis-[64%] lg:flex-row">
+                    <HeaderLogo />
+                    <div className="invisible h-0 sm:visible sm:h-auto">
+                        <MappedNav />
                     </div>
                 </div>
-            </Container>
+                <div
+                    className="h-full min-w-16 bg-cover"
+                    style={{
+                        backgroundImage: "url('/storage/contour-a.png')",
+                        borderRadius: '0 0 0 100%',
+                        flexBasis: '18%',
+                    }}
+                ></div>
+            </div>
+            <div className="visible h-12 px-4 sm:invisible sm:h-0">
+                <MappedNav />
+            </div>
         </div>
     );
 }

@@ -1,5 +1,3 @@
-import Container from '@/Components/Container';
-
 interface ImageBannerProps {
     imageUrl: string;
     title: string;
@@ -8,16 +6,18 @@ interface ImageBannerProps {
 export default function ImageBanner({ imageUrl, title }: ImageBannerProps) {
     return (
         <div
-            className={'h-[150px] border-b border-black bg-cover bg-center'}
-            style={{ backgroundImage: `url(\'${imageUrl}\')` }}
+            className={'h-[178px] border-b border-black bg-cover bg-center'}
+            style={{
+                backgroundImage: `url(\'${imageUrl}\')`,
+            }}
         >
-            <Container>
-                <div className="flex flex-row justify-end">
-                    <div className="max-w-[400px] text-right text-6xl font-bold italic text-white drop-shadow-[2px_2px_2px_rgba(0,0,0,1)]">
+            <div className="h-full w-full">
+                <div className="relative mx-auto flex h-full max-w-3xl flex-row justify-end p-4 pt-8">
+                    <div className="font-overlay basis-1/2 text-right text-card drop-shadow-[2px_2px_3px_rgba(0,0,0,0.75)] sm:text-6xl">
                         {title}
                     </div>
                 </div>
-            </Container>
+            </div>
         </div>
     );
 }

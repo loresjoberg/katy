@@ -6,7 +6,10 @@ export default function Layout({ children }) {
     return (
         <>
             <Head>
-                <title>Café Four-Top</title>
+                <title>
+                    Katy's Corner Cafe | Your Home for Great Coffee and
+                    Sandwiches
+                </title>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link
                     rel="preconnect"
@@ -14,13 +17,13 @@ export default function Layout({ children }) {
                     crossOrigin
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat+Brush&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
                     rel="stylesheet"
                 />
             </Head>
-            <div className="relative min-h-[1200px] bg-secondary">
+            <div className="relative min-h-[1200px]">
                 <FixedHead />
-                <main className="main pt-40">{children}</main>
+                <main className="pt-[100px]">{children}</main>
                 <Footer />
             </div>
         </>
