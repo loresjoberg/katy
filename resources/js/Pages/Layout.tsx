@@ -2,8 +2,12 @@ import FixedHead from '@/Components/FixedHead';
 import FixedHeadMobile from '@/Components/FixedHeadMobile';
 import Footer from '@/Components/Footer';
 import { Head } from '@inertiajs/react';
+import { ReactNode } from 'react';
 
-export default function Layout({ children }) {
+interface LayoutProps {
+    children: ReactNode;
+}
+export default function Layout({ children }: LayoutProps) {
     return (
         <>
             <Head>
@@ -15,7 +19,7 @@ export default function Layout({ children }) {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossOrigin
+                    crossOrigin={'anonymous'}
                 />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat+Brush&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"

@@ -293,7 +293,7 @@ export default function Menu() {
                     <Table className="mx-auto mt-2 max-w-[250px] max-w-sm sm:max-w-2xl">
                         <TableHeader>
                             <TableRow>
-                                <KTableHead></KTableHead>
+                                <KTableHead>&nbsp;</KTableHead>
                                 <KTableHead>
                                     <span className="sm:text-md whitespace-nowrap text-xs">
                                         8 oz.

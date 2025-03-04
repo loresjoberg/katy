@@ -37,7 +37,7 @@ export default function HoursAndLocation() {
                             src="https://www.google.com/maps/embed/v1/place?q=2000+East+Union+Street,+Seattle,+WA,+USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                             className="h-full w-full"
                             style={{ border: 0 }}
-                            allowFullScreen=""
+                            allowFullScreen
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
