@@ -5,7 +5,12 @@ interface NavItem {
     label: string;
     page: string;
 }
-export default function MappedNav() {
+
+interface MappedNavProps {
+    className?: string;
+}
+
+export default function MappedNav({ className }: MappedNavProps) {
     const currentRoute = route().current() === 'home' ? '' : route().current();
     const navItems: NavItem[] = [
         {
@@ -35,7 +40,7 @@ export default function MappedNav() {
         },
     ];
     return (
-        <div className="flex h-full flex-row items-center justify-between whitespace-nowrap">
+        <div className="mappedNav">
             {navItems.map((item) => {
                 const colorCss =
                     '/' + currentRoute === item.page
@@ -45,7 +50,7 @@ export default function MappedNav() {
                     <Link
                         key={item.page}
                         className={
-                            'whitespace-nowrap font-display text-[1.25rem] sm:pb-2 md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem] ' +
+                            'whitespace-nowrap font-display text-[1.25rem] md:text-[1.75rem] lg:text-[2rem] ' +
                             colorCss
                         }
                         href={item.page}

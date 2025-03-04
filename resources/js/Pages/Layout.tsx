@@ -1,4 +1,5 @@
 import FixedHead from '@/Components/FixedHead';
+import FixedHeadMobile from '@/Components/FixedHeadMobile';
 import Footer from '@/Components/Footer';
 import { Head } from '@inertiajs/react';
 
@@ -22,8 +23,13 @@ export default function Layout({ children }) {
                 />
             </Head>
             <div className="relative min-h-[1200px]">
-                <FixedHead />
-                <main className="pt-[100px]">{children}</main>
+                <div className="md:hidden">
+                    <FixedHeadMobile />
+                </div>
+                <div className="hidden md:block">
+                    <FixedHead />
+                </div>
+                <main className="pt-[5rem]">{children}</main>
                 <Footer />
             </div>
         </>

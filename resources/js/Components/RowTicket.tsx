@@ -1,10 +1,12 @@
 import SmallImage from '@/Components/SmallImage';
 import { Link } from '@inertiajs/react';
+import { ReactNode } from 'react';
 
 interface RowTicketProps {
     imageUrl: string;
     title: string;
     destination: string;
+    children: ReactNode;
 }
 
 export function RowTicket({

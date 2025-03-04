@@ -280,6 +280,14 @@ export default function Menu() {
                 title={'Menu'}
             ></ImageBanner>
             <Container>
+                <Card className={'mx-auto mb-4 max-w-lg p-4'}>
+                    <div className="mb-2 text-center font-display text-display-lg font-bold text-primary-foreground">
+                        Drink Special of the Month
+                    </div>
+                    <div className="text-center text-lg">
+                        Bourbon-Caramel Latte
+                    </div>
+                </Card>
                 <Card className={'mb-8 p-2 pt-8'}>
                     <TableLabel>Beverages</TableLabel>
                     <Table className="mx-auto mt-2 max-w-[250px] max-w-sm sm:max-w-2xl">
