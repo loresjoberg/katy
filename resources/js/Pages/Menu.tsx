@@ -285,7 +285,7 @@ export default function Menu() {
                         Drink Special of the Month
                     </div>
                     <div className="text-center text-lg">
-                        Bourbon-Caramel Latte
+                        Hazelnut Irish Cream Latte
                     </div>
                 </Card>
                 <Card className={'mb-8 p-2 pt-8'}>
